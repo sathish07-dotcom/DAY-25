@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <style>
+        body{
+            background-color: rgb(241, 199, 206);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+          text-align: center;
+          color: red;
+          text-decoration: underline green;
+        }
+        h3{
+          color: blue;
+          text-align: center;
+        }
+        .div{
+          height: 280vh;
+          border: 2px green solid;
+        }
+        h4{
+          color: red;
+        }
+        p{
+          color: green;
+        }
+        li{
+          color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object in js</h1>
+    <h3>In JavaScript, an **object** is a data structure used to store collections of data in the form of **key-value pairs**.bracket The keys are also known as properties, and the values can be any type of data, including other objects, arrays, or functions. Objects are one of the fundamental building blocks in JavaScript and are used extensively in both client-side and server-side development.</h3>
+<div class="div">
+<h4>Creating an Object</h4>
+<p>There are a few ways to create an object in JavaScript:</p>
+
+<li>Using Object Literals (Most Common Way)</li>
+<p>
+const person = { <br>
+  name: "John", <br>
+  age: 30, <br>
+  isEmployed: true <br>
+};</p>
+
+<li>Using the `new Object()` Syntax</li>
+<p>
+const person = new Object(); <br>
+person.name = "John"; <br>
+person.age = 30; <br>
+person.isEmployed = true;</p>
+
+
+<h4>Accessing Object Properties</h4>
+
+<p>You can access the properties of an object using either **dot notation** or **bracket notation**.</p>
+
+<li>Dot Notation</li>
+<p>
+console.log(person.name);  // John <br>
+console.log(person.age);   // 30</p>
+
+<li>Bracket Notation</li>
+<p>Bracket notation is useful when the property names are dynamic or contain spaces or special characters.</p>
+<p>
+console.log(person["name"]); // John <br>
+console.log(person["age"]);  // 30</p>
+
+
+<h4>Modifying Object Properties</h4>
+
+<p>You can modify an object's properties by assigning new values:</p>
+<p>
+person.age = 31; <br>
+console.log(person.age); // 31</p>
+
+
+<h4>You can also add new properties:</h4>
+<p>
+person.city = "New York"; <br>
+console.log(person.city); // New York</p>
+
+<h4>Deleting Properties</h4>
+
+<li>You can remove a property from an object using the `delete` keyword:</li>
+<p>
+delete person.city; <br>
+console.log(person.city); // undefined</p>
+
+
+<h4>Methods in Objects</h4>
+
+<li>can also contain **methods**, which are functions that are associated with the object. <br> A method is defined by assigning a function to a property of the object.</li>
+<p>
+const person = { <br>
+  name: "John",<br>
+  age: 30, <br>
+  greet: function() { <br>
+    console.log("Hello, " + this.name); <br>
+  } <br>
+}; <br>
+person.greet(); // Hello, John</p>
+
+<li>You can also define methods using shorthand syntax:</li>
+<p>
+const person = { <br>
+  name: "John",<br>
+  age: 30, <br>
+  greet() { <br>
+    console.log("Hello, " + this.name); <br>
+  } <br>
+}; <br>
+
+person.greet(); // Hello, John </p>
+
+<h4>`this` Keyword</h4>
+
+<li>Inside an object's method, the `this` keyword refers to the object itself. For example:</li>
+<p>
+const person = { <br>
+  name: "John", <br>
+  age: 30, <br>
+  greet() { <br>
+    console.log("Hello, " + this.name); <br>
+  } <br>
+}; <br>
+person.greet(); // Hello, John</p>
+```
+
+
+<h4>Object Methods</h4>
+
+<li>`Object.keys()` <br>
+Returns an array of the object's keys.</li>
+<p>
+const person = { name: "John", age: 30 }; <br>
+console.log(Object.keys(person)); // ["name", "age"]</p>
+
+
+<li>`Object.values()` <br>
+Returns an array of the object's values.</li>
+<p>
+console.log(Object.values(person)); // ["John", 30]</p>
+
+<li>`Object.entries()` <br>
+Returns an array of an object's key-value pairs.</li>
+<p>
+console.log(Object.entries(person)); // [["name", "John"], ["age", 30]]</p>
+
+<li>`Object.assign()` <br>
+Copies the values of all properties from one or more source objects to a target object.</li>
+<p>
+const person1 = { name: "John" }; <br>
+const person2 = { age: 30 }; <br>
+
+const mergedPerson = Object.assign({}, person1, person2); <br>
+console.log(mergedPerson); // { name: "John", age: 30 }</p>
+</div>
+    <script>
+      const student ={
+        name: "sagar",
+        age: 23,
+        city: "peddapalli"
+      }
+      console.log(student);
+      console.log(student.name);
+      console.log(student.age);
+      console.log(student.city);
+
+      const post ={
+        username: "@sagar07",
+        content: 'CSK WON THE 2025 IPL @6 th Time',
+        likes: '500k',
+        reposts: '100k',
+        tags: '@laddu ,@sathish'
+      }
+      console.log(post);
+      console.log(post.username);
+      console.log(post.likes);
+      console.log(post.tags);
+
+      //CREATING OBJECTS BY CLASS
+
+      class Student {
+        constructor(name,rollno,age,grade) {
+          this.name = name;
+          this.rollno = rollno;
+          this.age = age;
+          this.grade = grade;
+        }
+      }
+
+      let sagarStudent = new Student("Sagar",20,23,"A");
+      console.log(sagarStudent);
+      
+      let rahulStudent = new Student("Rahul",21,20,"A");
+      console.log(rahulStudent);
+
+      class Movie{
+        constructor(title,date,collections){
+          this.title = title;
+          this.date = date;
+          this.collections = collections;
+        }
+      }
+
+      let salar = new Movie("Salar",2024,1000);
+      console.log(salar);
+      
+      
+   
+
+
+    </script>
+</body>
+</html>
