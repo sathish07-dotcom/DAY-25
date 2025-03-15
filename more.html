@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+<h1>open sonlose </h1>
+
+<script>
+
+   const person = {
+     name: "John",
+     age: 30,
+     city: "New York"
+   };
+   
+
+
+   const car = {
+     brand: "Toyota",
+     model: "Camry",
+     year: 2020,
+     displayInfo: function() {
+       return `${this.year} ${this.brand} ${this.model}`;
+     }
+   };
+   
+
+
+   const employee = {
+     name: "Alice",
+     position: "Software Engineer",
+     contact: {
+       email: "alice@example.com",
+       phone: "123-456-7890"
+     }
+   };
+   
+
+
+   const student = {
+     name: "Bob",
+     subjects: ["Math", "Science", "English"]
+   };
+   
+
+   function Person(name, age) {
+     this.name = name;
+     this.age = age;
+   }
+
+   const person1 = new Person("Charlie", 25);
+
+
+
+   const dynamicKey = "age";
+   const user1 = {
+     name: "Dave",
+     [dynamicKey]: 40
+   };
+
+
+
+   const book = {
+     title: "JavaScript Basics",
+     author: "John Doe",
+     _price: 25,
+     get price() {
+       return this._price;
+     },
+     set price(value) {
+       this._price = value;
+     }
+   };
+   
+
+
+   const person2 = {
+     name: "Eve",
+     age: 28
+   };
+
+   const updatedPerson = { ...person, city: "Los Angeles" };
+   
+
+   const uniqueKey = Symbol("id");
+
+   const user = {
+     [uniqueKey]: 101,
+     name: "Frank"
+   };
+
+
+
+    const counter = {
+      value: 0,
+      increment: () => {
+        this.value++;
+      }
+    };
+
+
+
+    const frozenObject = Object.freeze({
+      name: "Grace",
+      role: "Developer"
+    });
+
+    frozenObject.name = "Hank";  // This won't work because the object is frozen
+
+
+    const propertyName = "age";
+    const person3 = {
+      name: "Ivy",
+      [propertyName]: 35
+    };
+    
+
+
+    const library = {
+      name: "Central Library",
+      books: [
+        { title: "JavaScript for Beginners", author: "John Smith" },
+        { title: "Advanced JavaScript", author: "Jane Doe" }
+      ]
+    };
+    
+
+
+    const event = {
+      name: "Concert",
+      date: new Date(2025, 2, 15)
+    };
+
+
+
+    const data = {
+      emailPattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      validateEmail: function(email) {
+        return this.emailPattern.test(email);
+      }
+    };
+
+</script>
+</body>
+</html>
